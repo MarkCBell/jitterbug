@@ -1,13 +1,10 @@
 # Jitterbug
 
-Jitterbug is a mutation testing tool for fuzzing parallel code.
-It supports [py.test](https://docs.pytest.org/en/latest/) tests in Python 3.8+.
+Jitterbug is a testing tool for fuzzing parallel code.
+It does this by randomly inserting ``sleep`` commands into various places in your code before each test run.
+This is a great way to test the stability of multithreaded or parallel code.
 
-From article at Wikipedia:
-
-> **Mutation testing** evaluates the quality of software tests.
-> Mutation testing involves modifying a program's source code or byte code in small ways.
-> A test suite that does not detect and reject the mutated code is considered defective.
+Jitterbug supports [py.test](https://docs.pytest.org/en/latest/) tests in Python 3.8+.
 
 ## Quickstart
 
