@@ -81,9 +81,8 @@ def run(sources, test_targets, timeout_factor, prob=0.5):
     print(f"Jitter score [{total.duration:.5f}s]: {percentage:.1%}")
 
     if all_mutants:
-        print(f"  - Passed:  {score[PASSED]} / {all_mutants} ({score[PASSED] / all_mutants:.1%}%)")
-        print(f"  - Failed:  {score[FAILED]} / {all_mutants} ({score[FAILED] / all_mutants:.1%}%)")
-        print(f"  - Timeout: {score[TIMEOUT]} / {all_mutants} ({score[TIMEOUT] / all_mutants:.1%})")
+        for state in (PASSED, FAILED, TIMEOUT):
+            print(f"  - {state}:  {score[state]} / {all_mutants} ({score[state] / all_mutants:.1%}%)")
 
 
 def safe_getattr(obj, name):
