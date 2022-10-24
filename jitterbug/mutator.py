@@ -2,7 +2,7 @@ from contextlib import contextmanager
 from random import random
 import ast
 
-NODE_TYPES = [ast.FunctionDef]  # For, While, If, With, Try, ExceptHandler
+NODE_TYPES = [ast.FunctionDef, ast.For, ast.While]  # Def, For, While, If, With, Try, ExceptHandler
 DELAY_BODY = ast.parse('from time import sleep; sleep(0.01)').body
 
 def mutate(root, n=10, prob=0.5):
